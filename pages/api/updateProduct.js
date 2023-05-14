@@ -7,7 +7,7 @@ export default async function handler(req, res) {
         if (req.method == "POST") {
 
             for (let i = 0; i < req.body.length; i++) {
-                 await Product.findByIdAndUpdate(req.body[i]._id,req.body[i]);
+                await Product.findByIdAndUpdate(req.body[i]._id, req.body[i]);
             }
 
             res.status(200).json({
@@ -15,7 +15,7 @@ export default async function handler(req, res) {
             })
         }
     } catch (error) {
-        res.json({error:error})
+        res.json({ error: error })
 
     }
 
